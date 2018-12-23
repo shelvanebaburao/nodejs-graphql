@@ -13,8 +13,8 @@ const {
 var books = [
     {name:'book 1 ',genre:'Wi-fi',id:'1',authorid:'1'},
     {name:'book 2 ',genre:'History',id:'2',authorid:'1'},
-    {name:'book 3 ',genre:'Wi-fi',id:'3',authorid:'1'},
-    {name:'book 4 ',genre:'History',id:'4',authorid:'1'},
+    {name:'book 3 ',genre:'Wi-fi',id:'3',authorid:'3'},
+    {name:'book 4 ',genre:'History',id:'4',authorid:'2'},
     {name:'book 5 ',genre:'Sports',id:'5',authorid:'1'}
 ];
 
@@ -73,6 +73,18 @@ const RootQuery = new GraphQLObjectType({
             resolve(parent,args){
                 //code to retrive data from db/ other resource
                 return _.find(authors,{id:args.id});
+            }
+        },
+        books:{
+            type:new GraphQLList(BookType),
+            resolve(params,args){
+                return books;
+            }
+        },
+        authors:{
+            type:new GraphQLList(AuthorType),
+            resolve(params,args){
+                return authors;
             }
         }
     }
