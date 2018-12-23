@@ -6,4 +6,4 @@ app.use('/graphql',graphqlHTTP({
     schema,
     graphiql:true
 }))
-app.listen(2000,()=>console.log('server listing of port 2000'));
+app.listen(3000,()=>console.log('server listing of port 3000'));
