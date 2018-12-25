@@ -1,6 +1,8 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
+//const Book = require('./models/book');
+//const Author = require('./models/author');
 const mongoose = require('mongoose');
 const app = express();
 
